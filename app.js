@@ -14,7 +14,13 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_ATLAS_CONNECTION_STRING, {useNewUrlParser: true});
+//add "/" at the end of connection string if not present
+const ENV_MONGODB_CONNECTION_STRING = process.env.MONGODB_CONNECTION_STRING;
+const MONGODB_CONNECTION_STRING = ENV_MONGODB_CONNECTION_STRING.slice(-1) == "/" ? ENV_MONGODB_CONNECTION_STRING : ENV_MONGODB_CONNECTION_STRING.concat("/");
+
+console.log(MONGODB_CONNECTION_STRING)
+
+mongoose.connect(MONGODB_CONNECTION_STRING.concat("todolistDB"), {useNewUrlParser: true});
 
 const itemsSchema = {
   name: String
