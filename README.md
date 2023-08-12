@@ -12,13 +12,13 @@ Functionality remaining to be implemented
 1. Run the command ```npm i``` to install all the dependencies.
 2. Create a MongoDB database named "todolistDB"
 2. Create .env file in the parent directory.
-3. Insert environment value as ```MONGODB_CONNECTION_STRING=<your_connection_string>```
+3. Insert environment value as    ```MONGODB_CONNECTION_STRING=your_connection_string``` and ```DB_NAME=database_name```
 3. Run the command `node app.js`
 
 ## To run using docker command:-
 1. Run the below command.
 ```docker
-docker container run -d -p 80:3000 --name todolist -e MONGODB_CONNECTION_STRING="<connection_string>/todolistDB" vishallokam/todolist-docker:latest
+docker container run -d -p 80:3000 --name todolist -e MONGODB_CONNECTION_STRING="<connection_string>" -e DB_NAME="<db_name>" vishallokam/todolist-docker:latest
 ```
 This command will create a container that listens on port `80` on the host. Then the traffic is routed to the port `3000` of the container. On port `3000` NodeJS server is listening for requests. Update the `<connection_string>` with the MongoDB connection string
 
