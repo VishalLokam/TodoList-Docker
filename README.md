@@ -20,7 +20,7 @@ Functionality remaining to be implemented
 ```docker
 docker container run -d -p 80:3000 --name todolist -e MONGODB_ATLAS_CONNECTION_STRING="<connection_string>/todolistDB" vishallokam/todolist-docker:latest
 ```
-This command will create a container that listens on port `80` on the host. Then the traffic is routed to the port `3000` of the container. On port `3000` NodeJS server is listening for requests. Update the `<connection_string>` with the MongoDB conncection string
+This command will create a container that listens on port `80` on the host. Then the traffic is routed to the port `3000` of the container. On port `3000` NodeJS server is listening for requests. Update the `<connection_string>` with the MongoDB connection string
 
 
 2. Open the browser and put the url as shown below  
