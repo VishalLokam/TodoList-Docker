@@ -1,0 +1,22 @@
+version: "3.2"
+
+services:
+  todolist-app:
+    image: vishallokam/todolist-docker:latest
+    container_name: todolist_app
+    restart: always
+    ports:
+      - '3000:3000'
+    environment:
+      - MONGODB_CONNECTION_STRING:"mongodb://mongo-db:27017"
+  
+  mongo-db:
+    image: mongo:latest
+    container_name: mongoDB
+    ports:
+      - 27018:27017
+    volumes: 
+        - mymongodata:/data/db
+
+volumes:
+  mymongodata:
