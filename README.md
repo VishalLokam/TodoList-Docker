@@ -29,3 +29,8 @@ This command will create a container that listens on port `80` on the host. Then
 Here `<ip_address>` will the ip address of your server
 
 
+## To run using compose file
+1. Download the `docker-compose.yml` file
+2. Run command `docker compose up`
+
+
