@@ -15,12 +15,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 //add "/" at the end of connection string if not present
-const ENV_MONGODB_CONNECTION_STRING = process.env.MONGODB_CONNECTION_STRING;
-const MONGODB_CONNECTION_STRING = ENV_MONGODB_CONNECTION_STRING.slice(-1) == "/" ? ENV_MONGODB_CONNECTION_STRING : ENV_MONGODB_CONNECTION_STRING.concat("/");
+const MONGODB_SERVER_URL = process.env.MONGODB_SERVER_URL;
+const server_url = MONGODB_SERVER_URL.slice(-1) == "/" ? "@" + MONGODB_SERVER_URL : "@" + MONGODB_SERVER_URL.concat("/");
+const DB_USER = process.env.DB_USER
+const DB_PASS = process.env.DB_PASS
+const mongodb_connection_string = "mongodb://" + DB_USER + ":" + DB_PASS + server_url
+// const mongodb_connection_string = "mongodb+srv://" + DB_USER + ":" + DB_PASS + server_url 
 
-console.log(MONGODB_CONNECTION_STRING)
+console.log(mongodb_connection_string)
 
-mongoose.connect(MONGODB_CONNECTION_STRING.concat("todolistDB"), {useNewUrlParser: true});
+mongoose.connect(mongodb_connection_string.concat("todolistDB"), {useNewUrlParser: true});
 
 const itemsSchema = {
   name: String

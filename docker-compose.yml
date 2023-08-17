@@ -8,7 +8,9 @@ services:
     ports:
       - '3000:3000'
     environment:
-      - MONGODB_CONNECTION_STRING:"mongodb://mongo-db:27017"
+      MONGODB_SERVER_URL: "mongodb://mongo-db:27017"
+      DB_USER: ownerUser
+      DB_PASS: ownerUserPass
   
   mongo-db:
     image: mongo:latest
