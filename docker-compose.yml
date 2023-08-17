@@ -25,6 +25,7 @@ services:
       - type: bind
         source: ./mongo-entrypoint
         target: /docker-entrypoint-initdb.d/
+    command: mongod
     
 
 volumes:
