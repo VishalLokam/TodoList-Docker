@@ -20,7 +20,7 @@ const MONGODB_CONNECTION_STRING = ENV_MONGODB_CONNECTION_STRING.slice(-1) == "/"
 
 console.log(MONGODB_CONNECTION_STRING)
 
-mongoose.connect(MONGODB_CONNECTION_STRING.concat(process.env.DB_NAME), {useNewUrlParser: true});
+mongoose.connect(MONGODB_CONNECTION_STRING.concat("todolistDB"), {useNewUrlParser: true});
 
 const itemsSchema = {
   name: String

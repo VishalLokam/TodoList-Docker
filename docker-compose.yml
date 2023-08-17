@@ -14,9 +14,16 @@ services:
     image: mongo:latest
     container_name: mongoDB
     ports:
-      - 27018:27017
+      - 27017:27017
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: superUser
+      MONGO_INITDB_ROOT_PASSWORD: superUserPass
     volumes: 
-        - mymongodata:/data/db
+      - mymongodata:/data/db
+      - type: bind
+        source: ./mongo-entrypoint
+        target: /docker-entrypoint-initdb.d/
+    
 
 volumes:
   mymongodata:
