@@ -4,13 +4,12 @@ services:
   todolist-app:
     image: vishallokam/todolist-docker:latest
     container_name: todolist_app
-    restart: always
     ports:
       - '3000:3000'
     environment:
-      MONGODB_SERVER_URL: "mongo-db:27017"
-      DB_USER: ownerUser
-      DB_PASS: ownerUserPass
+      MONGODB_SERVER_URL: "mongoDB:27017"
+      DB_USER: devUser
+      DB_PASS: devUserPass
   
   mongo-db:
     image: mongo:latest
@@ -25,8 +24,7 @@ services:
       - type: bind
         source: ./mongo-entrypoint
         target: /docker-entrypoint-initdb.d/
-    command: mongod
-    
+    command: [--auth]
 
 volumes:
   mymongodata:
