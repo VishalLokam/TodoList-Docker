@@ -16,7 +16,7 @@ Functionality remaining to be implemented
     ```shell
     mongosh --authenticationDatabase admin --host localhost -u superUser -p superUserPass todolistDB --eval "db.createUser({user: 'devUser', pwd: 'devUserPass', roles: [{role: 'readWrite', db: 'todolistDB'}]});"
     ```
-    Update the `superUser` to environment variable `MONGO_INITDB_ROOT_USERNAME`'s value in `docker-compose.yml` file. `devUserPass` to environment variable `MONGO_INITDB_ROOT_PASSWORD`'s value `docker-compose.yml`  
+    Update the `superUser` to environment variable `MONGO_INITDB_ROOT_USERNAME`'s value in `docker-compose.yml` file. `superUserPass` to environment variable `MONGO_INITDB_ROOT_PASSWORD`'s value `docker-compose.yml`  
 
     To add users use  [--eval](https://www.mongodb.com/docs/mongodb-shell/reference/options/#std-option-mongosh.--eval). Add users by specifying relevant information in [db.createUser](https://www.mongodb.com/docs/manual/reference/method/db.createUser/). For more information on RBAC checkout [MongoDB RBAC](https://www.mongodb.com/docs/manual/core/authorization/) 
 
