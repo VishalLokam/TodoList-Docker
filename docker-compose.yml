@@ -28,7 +28,6 @@ services:
       - type: bind
         source: ./mongo-entrypoint
         target: /docker-entrypoint-initdb.d/
-    command: [--auth]
     healthcheck: 
       test: echo 'db.runCommand({find:"todolistDB.devUser"}).ok' | mongosh --authenticationDatabase admin --host localhost -u superUser -p superUserPass admin --quiet | grep -q 1
       interval: 10s
