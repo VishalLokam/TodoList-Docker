@@ -7,7 +7,7 @@ Functionality remaining to be implemented
 - [x] Create a Dockerfile and publish the docker image on the docker hub
 - [x] Add MongoDB RBAC 
 - [ ] Implement secrets
-- [ ] Add support for docker swarm
+- [ ] Add support for docker swarm/kubernetes
 
 
 ## To run using compose file
