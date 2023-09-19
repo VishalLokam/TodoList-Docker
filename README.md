@@ -12,7 +12,7 @@ Functionality remaining to be implemented
 
 ## To run using compose file
 1. Download the `docker-compose.yml` and `mongo-entrypoint` folder in a same root directory
-2. In "mongo-init.sh" file update the command 
+2. In "mongo-init.sh" file inside `mongo-entrypoint` folder update the command 
     ```shell
     mongosh --authenticationDatabase admin --host localhost -u superUser -p superUserPass todolistDB --eval "db.createUser({user: 'devUser', pwd: 'devUserPass', roles: [{role: 'readWrite', db: 'todolistDB'}]});"
     ```
