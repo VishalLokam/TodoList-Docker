@@ -2,7 +2,7 @@ TodoList-Docker
 This repository is create to Dockerize the TodoList web application.  
 This web app used NodeJS, EJS and MongoDB.  
 
-Functionality remaining to be implemented
+Functionality implemented
 - [x] Create a web application that uses a database
 - [x] Create a Dockerfile and publish the docker image on the docker hub
 - [x] Add MongoDB RBAC 
