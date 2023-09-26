@@ -20,9 +20,12 @@ services:
     container_name: mongoDB
     ports:
       - 27017:27017
+    secrets:
+      - mongo_root_username
+      - mongo_root_password
     environment: 
-      MONGO_INITDB_ROOT_USERNAME: superUser
-      MONGO_INITDB_ROOT_PASSWORD: superUserPass
+      MONGO_INITDB_ROOT_USERNAME_FILE: /run/secrets/mongo_root_username
+      MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/mongo_root_password
     volumes: 
       - mymongodata:/data/db
       - type: bind
@@ -37,3 +40,9 @@ services:
 
 volumes:
   mymongodata:
+
+secrets:
+  mongo_root_username:
+    file: ./secrets/mongo_root_username.txt
+  mongo_root_password:
+    file: ./secrets/mongo_root_password.txt
