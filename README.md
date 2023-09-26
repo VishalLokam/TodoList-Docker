@@ -11,7 +11,7 @@ Functionality remaining to be implemented
 
 ## To run using compose file
 1. Download the `docker-compose.yml` and `mongo-entrypoint` folder in a same root directory
-2. create 2 text files `mongo_root_username.txt` and `mongo_root_password.txt` in a secrets folder.
+2. Create 2 text files `mongo_root_username.txt` and `mongo_root_password.txt` in a secrets folder.
 3. In "mongo-init.sh" file inside `mongo-entrypoint` folder update the command 
     ```shell
     mongosh --authenticationDatabase admin --host localhost -u superUser -p superUserPass todolistDB --eval "db.createUser({user: 'devUser', pwd: 'devUserPass', roles: [{role: 'readWrite', db: 'todolistDB'}]});"
@@ -25,7 +25,7 @@ Functionality remaining to be implemented
 5. Run command `docker compose up`
 
 ## Additional resources
-[My Blog](https://medium.com/@vishalvikaslokam/deploying-mongodb-using-docker-with-authentication-enabled-d20ec1256623)
+[My Blog](https://medium.com/@vishalvikaslokam/deploying-mongodb-using-docker-with-authentication-enabled-d20ec1256623)  
 [Mongo Docker Image](https://hub.docker.com/_/mongo)   
 [Volumes and Bind mount](https://www.atatus.com/blog/docker-volumes-vs-bind-mounts/#:~:text=Compared%20to%20Bind%20Mounts%2C%20Volumes,storage%20on%20your%20local%20machine.)
 
