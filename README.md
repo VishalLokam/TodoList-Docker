@@ -6,7 +6,7 @@ Functionality remaining to be implemented
 - [x] Create a web application that uses a database
 - [x] Create a Dockerfile and publish the docker image on the docker hub
 - [x] Add MongoDB RBAC 
-- [ ] Implement secrets
+- [x] Implement secrets
 
 
 ## To run using compose file
